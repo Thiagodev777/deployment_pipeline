@@ -1,0 +1,7 @@
+---
+- name: Start
+  hosts: all
+  tasks:
+    - name: Mostrar mensagem de log
+      debug:
+        msg: "Mensagem de log: {{ ansible_date_time.iso8601 }} - Registro gerado pelo Ansible"

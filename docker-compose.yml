@@ -1,0 +1,13 @@
+services:
+  deployment_pipeline:
+    build: $PWD
+    container_name: deployment_pipeline
+    platform: linux/amd64 
+    environment:
+      # ANSIBLE_VERSION: 2.17
+      ANSIBLE_ENTRYPOINT_PLAYBOOK: main.yml
+      SERVER_HOST: localhost
+      ANSIBLE_SSH_USER: admin
+      ANSIBLE_SSH_PASS: admin 
+    volumes: 
+      - '$PWD:/ansible'
